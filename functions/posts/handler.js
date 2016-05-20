@@ -21,7 +21,7 @@ module.exports.handler = function(event, context) {
             var uuid = require('node-uuid');
             event.payload.Item.id = uuid.v1();
             console.log('Payload: ', display(event.payload));
-            dynamo.putItem(event.payload);
+            dynamo.putItem(event.payload, context.succeed(event.payload.Item));
             break;
         default:
             context.fail(new Error('Unrecognized operation "' + operation + '"'));
