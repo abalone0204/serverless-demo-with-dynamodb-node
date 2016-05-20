@@ -1,0 +1,13 @@
+{
+    "requestCreatePostTemplate": {
+        "application/json": {
+            "operation": "create",
+            "tableName": "posts",
+            "payload": {
+                "Item": {
+                    "content": "$input.json('$')"
+                }
+            }
+        }
+    }
+}

@@ -9,5 +9,8 @@
     "type": "git",
     "url": "git://github.com/"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dynamodb-doc": "^1.0.0",
+    "node-uuid": "^1.4.7"
+  }
 }

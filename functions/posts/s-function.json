@@ -4,7 +4,7 @@
   "description": "Serverless Lambda function for project: serverless-demo",
   "customName": false,
   "customRole": false,
-  "handler": "handler.handler",
+  "handler": "functions/posts/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "authorizer": {},
@@ -23,6 +23,31 @@
       "requestTemplates": {
         "application/json": ""
       },
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {
+            "application/json;charset=UTF-8": "Empty"
+          },
+          "responseTemplates": {
+            "application/json;charset=UTF-8": ""
+          }
+        }
+      }
+    },
+    {
+      "path": "posts",
+      "method": "POST",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${requestCreatePostTemplate}",
       "responses": {
         "400": {
           "statusCode": "400"
