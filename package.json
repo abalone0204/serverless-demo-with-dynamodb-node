@@ -12,5 +12,8 @@
   "dependencies": {
     "dynamodb-doc": "^1.0.0",
     "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "serverless-offline": "^2.4.1"
   }
 }
