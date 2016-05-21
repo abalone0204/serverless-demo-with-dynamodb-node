@@ -21,5 +21,40 @@
             }
         }
 
+    },
+    "requestUpdatePostTemplate": {
+        "application/json": {
+            "operation": "update",
+            "tableName": "posts",
+            "payload": {
+                "Item": {
+                    "id": "$input.params('id')",
+                    "content": "$input.json('$')"
+                }
+            }
+        }
+
+    },
+    "requestDestroyPostTemplate": {
+        "application/json": {
+            "operation": "destroy",
+            "tableName": "posts",
+            "payload": {
+                "Key": {
+                    "id": "$input.params('id')"
+                }
+            }
+        }
+
+    },
+    "responseReadPostTemplate": {
+        "application/json": {
+            "post": {
+                "id": "$input.path('$').Item.id",
+                "content": {
+                    "message": "$input.path('$').Item.content.message"
+                }
+            }
+        }
     }
 }

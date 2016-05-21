@@ -33,6 +33,57 @@
           "responseModels": {
             "application/json;charset=UTF-8": "Empty"
           },
+          "responseTemplates": "$${responseReadPostTemplate}"
+        }
+      }
+    },
+    {
+      "path": "posts",
+      "method": "PUT",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {
+        "integration.request.querystring.id": "method.request.querystring.id"
+      },
+      "requestTemplates": "$${requestUpdatePostTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {
+            "application/json;charset=UTF-8": "Empty"
+          },
+          "responseTemplates": {
+            "application/json;charset=UTF-8": ""
+          }
+        }
+      }
+    },{
+      "path": "posts",
+      "method": "DELETE",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {
+        "integration.request.querystring.id": "method.request.querystring.id"
+      },
+      "requestTemplates": "$${requestDestroyPostTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {
+            "application/json;charset=UTF-8": "Empty"
+          },
           "responseTemplates": {
             "application/json;charset=UTF-8": ""
           }

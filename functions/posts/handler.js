@@ -21,12 +21,22 @@ module.exports.handler = (event, context) => {
             const uuid = require('node-uuid')
             event.payload.Item.id = uuid.v1()
             console.log('Payload: ', display(event.payload))
-            dynamo.putItem(event.payload, () => {
+            dynamo.putItem(event.payload, (err, data) => {
                 context.succeed(event.payload.Item)
             })
             break
         case 'read':
-            dynamo.getItem(event.payload, context.done)
+            dynamo.getItem(event.payload, (err, data) => {
+                context.succeed(data)
+            })
+            break
+        case 'update':
+            dynamo.putItem(event.payload, (err, data)=> {
+                context.succeed(event.payload)
+            })
+            break
+        case 'destroy':
+            dynamo.deleteItem(event.payload, context.done)
             break
         default:
             context.fail(new Error('Unrecognized operation "' + operation + '"'))
