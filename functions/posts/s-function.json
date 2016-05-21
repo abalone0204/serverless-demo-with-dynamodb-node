@@ -13,7 +13,7 @@
   },
   "endpoints": [
     {
-      "path": "posts",
+      "path": "post",
       "method": "GET",
       "type": "AWS",
       "authorizationType": "none",
@@ -38,7 +38,7 @@
       }
     },
     {
-      "path": "posts",
+      "path": "post",
       "method": "PUT",
       "type": "AWS",
       "authorizationType": "none",
@@ -64,7 +64,7 @@
         }
       }
     },{
-      "path": "posts",
+      "path": "post",
       "method": "DELETE",
       "type": "AWS",
       "authorizationType": "none",

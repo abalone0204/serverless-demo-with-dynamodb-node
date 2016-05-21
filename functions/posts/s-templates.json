@@ -45,7 +45,6 @@
                 }
             }
         }
-
     },
     "responseReadPostTemplate": {
         "application/json": {
