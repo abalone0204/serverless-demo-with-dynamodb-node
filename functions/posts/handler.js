@@ -38,6 +38,9 @@ module.exports.handler = (event, context) => {
         case 'destroy':
             dynamo.deleteItem(event.payload, context.done)
             break
+        case 'list':
+            dynamo.scan(event.payload, context.done)
+            break
         default:
             context.fail(new Error('Unrecognized operation "' + operation + '"'))
     }

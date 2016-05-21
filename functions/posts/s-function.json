@@ -13,6 +13,28 @@
   },
   "endpoints": [
     {
+      "path": "posts",
+      "method": "GET",
+      "type": "AWS",
+      "authorizationType": "none",
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${requestListPostTemplate}",
+      "responses": {
+        "400": {
+          "statusCode": "400"
+        },
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {},
+          "responseModels": {},
+          "responseTemplates": {
+            "application/json": "$${responseListPostTemplate}"
+          }
+        }
+      }
+    },
+    {
       "path": "post",
       "method": "GET",
       "type": "AWS",

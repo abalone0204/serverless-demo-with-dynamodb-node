@@ -1,4 +1,11 @@
 {
+    "requestListPostTemplate": {
+        "application/json": {
+            "operation": "list",
+            "tableName": "posts",
+            "payload": {}
+        }
+    },
     "requestCreatePostTemplate": {
         "application/json": {
             "operation": "create",
@@ -55,5 +62,6 @@
                 }
             }
         }
-    }
+    },
+    "responseListPostTemplate": "{\"posts\" : [#foreach($post in $input.path('$').Items){\"id\" : \"$post.id\",\"content\" : { \"message\":\"$post.content.message\" }}#if($foreach.hasNext),#end #end ] }"
 }
