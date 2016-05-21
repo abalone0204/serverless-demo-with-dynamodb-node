@@ -9,5 +9,17 @@
                 }
             }
         }
+    },
+    "requestReadPostTemplate": {
+        "application/json": {
+            "operation": "read",
+            "tableName": "posts",
+            "payload": {
+                "Key": {
+                    "id": "$input.params('id')"
+                }
+            }
+        }
+
     }
 }

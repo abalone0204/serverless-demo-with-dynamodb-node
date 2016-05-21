@@ -19,10 +19,10 @@
       "authorizationType": "none",
       "authorizerFunction": false,
       "apiKeyRequired": false,
-      "requestParameters": {},
-      "requestTemplates": {
-        "application/json": ""
+      "requestParameters": {
+        "integration.request.querystring.id": "method.request.querystring.id"
       },
+      "requestTemplates": "$${requestReadPostTemplate}",
       "responses": {
         "400": {
           "statusCode": "400"
