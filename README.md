@@ -1,5 +1,7 @@
 # Serverless Demo: A simple RESTful API 
 
+![serverless](http://i.imgur.com/lP3wcnh.jpg)
+
 # Tutorial
 
 - Sorry, but it's only written in Chinese now:
